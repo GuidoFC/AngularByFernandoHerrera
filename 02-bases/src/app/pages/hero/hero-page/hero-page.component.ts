@@ -1,9 +1,10 @@
-import {Component, inject, signal} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import {UpperCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-hero-page',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, UpperCasePipe],
   templateUrl: './hero-page.component.html',
   styles: ``
 })
@@ -19,10 +20,12 @@ export class HeroPageComponent {
     edadCambiar: [0],
   })
 
-
-  getHeroDescription() {
+  heroDescription = computed(() =>{
     return `EL nombre es: ${this.name()} y su edad es: ${this.age()}`;
-  }
+
+  })
+
+
 
   changeHero(){
     this.age.set(22)
