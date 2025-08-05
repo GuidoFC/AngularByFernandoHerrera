@@ -8,12 +8,12 @@
   <dd>{{ age() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
   <!-- ! Intentar  -->
    <td>Mostrar nombre TODO EN MAYÚSCULAS</td>
-   <dd> {{ getHeroDescription().toUpperCase() }} </dd>
+   <dd> {{ heroDescription() | uppercase }} </dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">
