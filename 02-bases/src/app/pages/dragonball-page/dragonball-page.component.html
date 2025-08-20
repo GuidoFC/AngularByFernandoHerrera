@@ -14,10 +14,23 @@
 
   <div class="col-12 col-sm-6" style="background: blue">
     <h3>Listado</h3>
-    <ol>
-      <li>Goku</li>
-      <li>Goku</li>
-      <li>Goku</li>
-    </ol>
+    <ul>
+
+      @for (item of characters(); track item.id; let odd = $odd) {
+        @if (odd){
+        <li>
+          <strong>{{ odd }} </strong>
+          <span>{{ item.id }} </span>
+          <span>{{ item.name }}</span>
+          <strong class="text-danger"> {{ item.power }} </strong>
+
+        </li>
+        }
+      } @empty {
+        <li>There are no items.</li>
+      }
+
+
+    </ul>
   </div>
 </section>
