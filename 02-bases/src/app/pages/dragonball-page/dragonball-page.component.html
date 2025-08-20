@@ -3,7 +3,7 @@
 <hr>
 
 <section class="row">
-  <div class="col-12 col-sm-6" style="background: red">
+  <div class="col-12 col-sm-6" >
     <h3>Agregar:</h3>
     <input type="text" class="form-control" placeholder="Nombre">
     <input type="number" class="form-control mt-2" placeholder="Poder">
@@ -12,20 +12,22 @@
     </button>
   </div>
 
-  <div class="col-12 col-sm-6" style="background: blue">
+  <div class="col-12 col-sm-6">
     <h3>Listado</h3>
     <ul>
 
       @for (item of characters(); track item.id; let odd = $odd) {
-        @if (odd){
+<!--        @if (odd){-->
         <li>
           <strong>{{ odd }} </strong>
           <span>{{ item.id }} </span>
           <span>{{ item.name }}</span>
-          <strong class="text-danger"> {{ item.power }} </strong>
+          <strong [class.text-danger]="item.power > 9000"
+                  [class.text-primary]="item.power < 9000"
+          > {{ item.power }} </strong>
 
         </li>
-        }
+<!--        }-->
       } @empty {
         <li>There are no items.</li>
       }
