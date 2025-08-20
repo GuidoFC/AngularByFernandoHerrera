@@ -18,5 +18,6 @@ export class DragonballPageComponent {
     {id: 1, name: "Goku", power: 9001},
     {id: 2, name: "Vegeta", power: 9000},
     {id: 3, name: "Piccolo", power: 8000},
+    {id: 4, name: "Yamcha", power: 300},
   ])
 }

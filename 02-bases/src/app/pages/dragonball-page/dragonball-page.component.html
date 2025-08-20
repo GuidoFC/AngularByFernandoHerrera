@@ -17,7 +17,7 @@
     <ul>
 
       @for (item of characters(); track item.id; let odd = $odd) {
-<!--        @if (odd){-->
+        @if (item.power > 1000){
         <li>
           <strong>{{ odd }} </strong>
           <span>{{ item.id }} </span>
@@ -27,7 +27,7 @@
           > {{ item.power }} </strong>
 
         </li>
-<!--        }-->
+        }
       } @empty {
         <li>There are no items.</li>
       }
