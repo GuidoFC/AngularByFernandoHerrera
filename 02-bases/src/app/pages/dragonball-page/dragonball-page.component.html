@@ -5,9 +5,9 @@
 <section class="row">
   <div class="col-12 col-sm-6" >
     <h3>Agregar:</h3>
-    <input type="text" class="form-control" placeholder="Nombre">
-    <input type="number" class="form-control mt-2" placeholder="Poder">
-    <button class="mt-4 btn btn-primary">
+    <input [value]="name()" type="text" class="form-control" placeholder="Nombre">
+    <input   [value]="power()" type="number" class="form-control mt-2" placeholder="Poder">
+    <button class="mt-4 btn btn-primary" (click)="addNewCharacter()">
       agregar
     </button>
   </div>
