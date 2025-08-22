@@ -3,10 +3,17 @@
 <hr>
 
 <section class="row">
-  <div class="col-12 col-sm-6" >
+  <div class="col-12 col-sm-6">
     <h3>Agregar:</h3>
-    <input [value]="name()" type="text" class="form-control" placeholder="Nombre">
-    <input   [value]="power()" type="number" class="form-control mt-2" placeholder="Poder">
+    <input [value]="name()" type="text" class="form-control" placeholder="Nombre"
+           (input)="name.set(txtName.value)"
+           #txtName
+    >
+
+    <input [value]="power()" type="number" class="form-control mt-2" placeholder="Poder"
+           (input)="power.set(+txtPower.value)"
+           #txtPower
+    >
     <button class="mt-4 btn btn-primary" (click)="addNewCharacter()">
       agregar
     </button>
@@ -16,17 +23,17 @@
     <h3>Listado</h3>
     <ul>
 
-      @for (item of characters(); track item.id; let odd = $odd) {
-        @if (item.power > 1000){
-        <li>
-          <strong>{{ odd }} </strong>
-          <span>{{ item.id }} </span>
-          <span>{{ item.name }}</span>
-          <strong [class.text-danger]="item.power > 9000"
-                  [class.text-primary]="item.power < 9000"
-          > {{ item.power }} </strong>
+      @for (item of listCharacters(); track item.id; let odd = $odd) {
+        @if (item.power > 1000) {
+          <li>
+            <strong>{{ odd }} </strong>
+            <span>{{ item.id }} </span>
+            <span>{{ item.name }}</span>
+            <strong [class.text-danger]="item.power > 9000"
+                    [class.text-primary]="item.power < 9000"
+            > {{ item.power }} </strong>
 
-        </li>
+          </li>
         }
       } @empty {
         <li>There are no items.</li>

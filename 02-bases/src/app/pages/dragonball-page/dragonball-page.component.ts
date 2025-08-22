@@ -15,10 +15,10 @@ interface Character {
 export class DragonballPageComponent {
 
 
-  name = signal<string>("Pedros");
-  power = signal<number>(50050);
+  name = signal<string>("");
+  power = signal<number>(0);
 
-  characters = signal<Character[]>([
+  listCharacters = signal<Character[]>([
     {id: 1, name: "Goku", power: 9001},
     {id: 2, name: "Vegeta", power: 9000},
     {id: 3, name: "Piccolo", power: 8000},
@@ -27,9 +27,28 @@ export class DragonballPageComponent {
 
   addNewCharacter() {
 
-    this.characters.update(values => {
-      return [...values,  {id: this.characters().length + 1, name: this.name(), power: this.power()}];
+    if (!this.name() || !this.power() || this.power() <= 0) {
+      console.log("No podemos guardar nada")
+      return
+    }
+
+    const newCharacter: Character = {
+      id: this.listCharacters().length + 1,
+      name: this.name(),
+      power: this.power()
+
+    }
+
+    this.listCharacters.update(values => {
+      return [...values, newCharacter];
     });
+
+    this.resetFilds();
+  }
+
+  resetFilds() {
+    this.power.set(0)
+    this.name.set("")
   }
 
 }
