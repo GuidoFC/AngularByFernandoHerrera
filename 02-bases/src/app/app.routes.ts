@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import {CounterPageComponent} from './pages/counter/counter-page.component';
 import {HeroPageComponent} from './pages/hero/hero-page/hero-page.component';
 import {DragonballPageComponent} from './pages/dragonball-page/dragonball-page.component';
+import {CopyDragonballPageComponent} from './pages/Copy-dragonball-page/copy-dragonball-page.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,11 @@ export const routes: Routes = [
   {
     path: 'hero',
     component: HeroPageComponent,
+    title: 'Home details',
+  },
+  {
+    path: 'Copydragonball',
+    component: CopyDragonballPageComponent,
     title: 'Home details',
   },
   {
