@@ -20,26 +20,8 @@
   </div>
 
   <div class="col-12 col-sm-6">
+    <character-list [listCharacters]="this.listCharacters()"/>
     <h3>Listado</h3>
-    <ul>
 
-      @for (item of listCharacters(); track item.id; let odd = $odd) {
-        @if (item.power > 1000) {
-          <li>
-            <strong>{{ odd }} </strong>
-            <span>{{ item.id }} </span>
-            <span>{{ item.name }}</span>
-            <strong [class.text-danger]="item.power > 9000"
-                    [class.text-primary]="item.power < 9000"
-            > {{ item.power }} </strong>
-
-          </li>
-        }
-      } @empty {
-        <li>There are no items.</li>
-      }
-
-
-    </ul>
   </div>
 </section>
