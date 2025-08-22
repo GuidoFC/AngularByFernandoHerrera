@@ -7,6 +7,8 @@ import {Character} from '../../interfaces/character.interfaces';
 @Component({
   selector: 'copy-dragonball-page',
   templateUrl: './copy-dragonball-page.component.html',
+  standalone: true,
+  imports: [CharacterListComponent],
   styles: ``
 })
 export class CopyDragonballPageComponent {
