@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, input, Input} from '@angular/core';
+import {Character} from '../../../interfaces/character.interfaces';
 
 @Component({
-  selector: 'app-character-list',
+  selector: 'character-list',
   templateUrl: './character-list.component.html',
+  standalone: true
 })
 export class CharacterListComponent {
 
+
+  listCharacters = input.required<Character[]>()
 }
