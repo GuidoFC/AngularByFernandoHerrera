@@ -8,7 +8,6 @@ interface Character {
 
 @Component({
   selector: 'copy-dragonball-page',
-  imports: [],
   templateUrl: './copy-dragonball-page.component.html',
   styles: ``
 })
