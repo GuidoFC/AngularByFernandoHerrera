@@ -1,10 +1,8 @@
 import {Component, signal} from '@angular/core';
+import {CharacterListComponent} from '../../compontents/dragonBall/character-list/character-list.component';
+import {Character} from '../../interfaces/character.interfaces';
 
-interface Character {
-  id: number;
-  name: string;
-  power: number;
-}
+
 
 @Component({
   selector: 'copy-dragonball-page',
