@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, output, signal} from '@angular/core';
 import {Character} from '../../../interfaces/character.interfaces';
 
 @Component({
@@ -13,6 +13,8 @@ export class DragonballAddComponent {
   name = signal<string>("");
   power = signal<number>(0);
 
+  newCharaterOutput = output<Character>()
+
   addNewCharacter() {
 
     if (!this.name() || !this.power() || this.power() <= 0) {
@@ -21,7 +23,7 @@ export class DragonballAddComponent {
     }
 
     const newCharacter: Character = {
-      id: 100,
+      id: Math.floor(Math.random() * 100) + 1,
       name: this.name(),
       power: this.power()
 
@@ -32,6 +34,8 @@ export class DragonballAddComponent {
     // });
 
     console.log("nuevo personaje: " + JSON.stringify(newCharacter))
+
+    this.newCharaterOutput.emit(newCharacter)
 
     this.resetFilds();
   }
