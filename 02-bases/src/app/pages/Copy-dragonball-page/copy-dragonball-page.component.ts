@@ -1,7 +1,7 @@
-import {Component, signal} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CharacterListComponent} from '../../compontents/dragonBall/character-list/character-list.component';
-import {Character} from '../../interfaces/character.interfaces';
 import {DragonballAddComponent} from '../../compontents/dragonBall/dragonball-add/dragonball-add.component';
+import {DragonballService} from '../../services/dragonball.service';
 
 
 @Component({
@@ -13,8 +13,6 @@ import {DragonballAddComponent} from '../../compontents/dragonBall/dragonball-ad
 })
 export class CopyDragonballPageComponent {
 
-
-
-
+  public dragonBallService = inject(DragonballService)
 
 }
