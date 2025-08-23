@@ -14,16 +14,7 @@ import {DragonballAddComponent} from '../../compontents/dragonBall/dragonball-ad
 export class CopyDragonballPageComponent {
 
 
-  listCharacters = signal<Character[]>([
-    {id: 1, name: "Goku", power: 9001},
-    {id: 2, name: "Vegeta", power: 9000},
-  ])
 
-  addNewCharacterList(insertNewCharacter: Character) {
-    this.listCharacters.update(value => {
-      return [...value, insertNewCharacter]
-    })
-  }
 
 
 }
