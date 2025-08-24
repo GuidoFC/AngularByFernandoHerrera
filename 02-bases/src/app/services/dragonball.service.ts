@@ -20,6 +20,10 @@ export class DragonballService {
   })
 
 
+  saveToLocalStorage = effect(() => {
+    localStorage.setItem("listCharacters", JSON.stringify(this.listCharacters()));
+
+  })
 
   addNewCharacterList(insertNewCharacter: Character) {
 
@@ -27,6 +31,5 @@ export class DragonballService {
       return [...value, insertNewCharacter]
     })
 
-    localStorage.setItem("listCharacters", JSON.stringify(this.listCharacters()));
   }
 }
