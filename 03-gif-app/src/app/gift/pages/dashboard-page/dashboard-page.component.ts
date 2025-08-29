@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {GiftSideMenuHeaderComponent} from '../../components/gift-side-menu-header/gift-side-menu-header.component';
-import {GiftSideMenuOptionsComponent} from '../../components/gift-side-menu-options/gift-side-menu-options.component';
+import {SideMenuComponent} from '../../components/side-menu/side-menu.component';
 
 @Component({
   selector: 'app-dashboard-page',
   imports: [
     RouterOutlet,
-    GiftSideMenuHeaderComponent,
-    GiftSideMenuOptionsComponent
+    SideMenuComponent
   ],
   standalone: true,
   templateUrl: './dashboard-page.component.html',
