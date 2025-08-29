@@ -1,1 +1,7 @@
-<p>gift-list-item works!</p>
+<div>
+  @for (srcIMG of imageUrls; track imageUrls){
+
+    <img class="h-auto max-w-full rounded-lg" [src]="srcIMG"
+         alt="">
+  }
+</div>
